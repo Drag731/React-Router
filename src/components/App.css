@@ -83,6 +83,11 @@
   padding: 0;
 }
 
+.movie-name-link {
+  text-decoration: none;
+  color: black;
+}
+
 .movie-name:hover {
   color: #d43015;
   cursor: pointer;
