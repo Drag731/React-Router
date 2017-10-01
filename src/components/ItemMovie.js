@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Stars from './Stars.js';
 import likeImg from './likeImg.js';
+import { Link } from 'react-router'
 
 class ItemMovie extends Component {
     constructor(props){
@@ -27,6 +28,7 @@ class ItemMovie extends Component {
     }
 
     render() {
+
         return (
             <div className="movie-item">
                 <div className="likes">
@@ -36,7 +38,10 @@ class ItemMovie extends Component {
                 </div>
                 
                 <div className="poster">
-                    <h3 onClick={this.onClick} className="movie-name">{this.props.currentMovie.title}</h3>
+                    <h3 onClick={this.onClick} className="movie-name">
+                        <Link to={'/movies/' + this.props.currentMovie.id} className="movie-name-link">
+                            {this.props.currentMovie.title}
+                        </Link></h3>
                     <img className="poster-img" src={this.props.currentMovie.posterUrl} alt={this.props.currentMovie.title}/>
                 </div>
                 <div className="count-likes">{this.props.currentMovie.likes}</div>
